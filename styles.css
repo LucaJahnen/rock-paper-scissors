@@ -5,7 +5,8 @@
 }
 
 body {
-    height: 100vh;
+    max-height: 100%;
+    overflow: hidden;
     background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 }
 
@@ -13,19 +14,23 @@ body, button {
     font-family: "Barlow Semi Condensed", sans-serif;
 }
 
+button {
+    cursor: pointer;
+}
+
 nav {
-    width: 50%;
-    margin: 3rem auto;
-    padding: 1.8rem;
-    border: 4px solid hsl(217, 16%, 45%);
+    width: 52%;
+    margin: 3rem auto 0 auto;
+    padding: 1rem 1.8rem;
+    border: 3px solid hsl(217, 16%, 45%);
     border-radius: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     section {
-        padding: 1rem 3rem;
-        border-radius: 1rem;
+        padding: 0.8rem 3rem;
+        border-radius: 0.7rem;
         background-color: white;
 
         p {
@@ -39,7 +44,89 @@ nav {
         h1 {
             text-align: center;
             color: hsl(229, 25%, 31%);
-            font-size: 3.6rem;
+            font-size: 3.8rem;
         }
     }
+}
+
+main {
+    position: relative;
+
+    .bg-triangle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -2;
+    }
+
+    .card {
+        padding: 2rem;
+        height: 26vmin;
+        width: 26vmin;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        padding: 1.5rem;
+        background: white;
+        background-clip: padding-box;
+        border: 1.6rem solid transparent;
+        box-shadow: inset 0 5px 1px 0 rgba(219, 219, 219, 0.9), 0px 5px 1px 0 hsl(230, 89%, 59%);
+        background-color: white;
+        position: relative;
+        left: 33.3%;
+        top: 6.5vmin;
+
+        img {
+            width: 70%;
+        }
+    }
+
+    .card::after {
+        content: "";
+        height: 26vmin;
+        width: 26vmin;
+        border-radius: 50%;
+        background-image: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+    .scissors {
+        box-shadow: inset 0 5px 1px 0 rgba(219, 219, 219, 0.9), 0px 5px 1px 0 hsl(39, 89%, 49%);
+        top: calc(-26vmin + 6.5vmin);
+        left: calc(66.6% - 26vmin);
+    }
+
+    .scissors::after {
+        background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    }
+
+    .rock {
+        box-shadow: inset 0 5px 1px 0 rgba(219, 219, 219, 0.9), 0px 5px 1px 0 hsl(349, 71%, 52%);
+        top: -13vmin;
+        left: calc(50% - 13vmin);
+    }
+
+    .rock::after {
+        content: "";
+        background-image: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    }
+}
+
+.rules {
+    padding: 0.8rem 2rem;
+    color: white;
+    text-transform: uppercase;
+    border: 1px solid white;
+    background-color: transparent;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    letter-spacing: 0.1rem;
+    position: absolute;
+    bottom: 4%;
+    right: 4%;
 }
