@@ -56,29 +56,16 @@ main {
     .heading {
         color: white;
         text-transform: uppercase;
-        /* position: absolute;
-        top: 33%; */
         font-size: 1.6rem;
         letter-spacing: 0.1rem;
         margin-bottom: 7rem;
     }
-
-    /* .you {
-        left: 31%;
-    }
-
-    .house {
-        left: 55%;
-    } */
 
     .circle {
         width: 28vmin;
         height: 28vmin;
         background-color: hsl(237, 49%, 15%);
         border-radius: 50%;
-        /* position: absolute;
-        top: 102%;
-        left: 55%; */
     }
 
     .choice-wrapper {
@@ -90,6 +77,31 @@ main {
 
     .house-wrapper {
         position: relative;
+    }
+
+    .result {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h1 {
+            color: white;
+            text-transform: uppercase;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            background-color: white;
+            border: none;
+            color: hsl(229, 25%, 31%);
+            padding: 0.8rem 6rem;
+            border-radius: 0.4rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 1rem;
+        }
     }
 
     .bg-triangle {
