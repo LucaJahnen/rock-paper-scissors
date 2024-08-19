@@ -13,6 +13,8 @@ closeButton?.addEventListener("click", () => {
 const cards = document.querySelectorAll(".card")
 const possibilites = ["paper", "scissors", "rock"]
 const main = document.querySelector("main")
+let score =  12
+const scoreElement = document.querySelector("nav section h1")
 
 const handleClick = (index: number) => {
     console.log("click")
@@ -105,6 +107,14 @@ const handleClick = (index: number) => {
         `
         message.appendChild(buttonReset())
         main?.insertBefore(message, firstChild?.nextSibling ?? null)
+        if(win) {
+            score++
+        } else {
+            score--
+        }
+        if(scoreElement) {
+            scoreElement.textContent = score
+        }
     }
     displayResult()
 }
