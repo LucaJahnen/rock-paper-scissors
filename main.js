@@ -20,6 +20,8 @@ closeButton === null || closeButton === void 0 ? void 0 : closeButton.addEventLi
 const cards = document.querySelectorAll(".card");
 const possibilites = ["paper", "scissors", "rock"];
 const main = document.querySelector("main");
+let score = 12;
+const scoreElement = document.querySelector("nav section h1");
 const handleClick = (index) => {
     console.log("click");
     let mainHTML;
@@ -106,6 +108,15 @@ const handleClick = (index) => {
         `;
         message.appendChild(buttonReset());
         main === null || main === void 0 ? void 0 : main.insertBefore(message, (_a = firstChild === null || firstChild === void 0 ? void 0 : firstChild.nextSibling) !== null && _a !== void 0 ? _a : null);
+        if (win) {
+            score++;
+        }
+        else {
+            score--;
+        }
+        if (scoreElement) {
+            scoreElement.textContent = score;
+        }
     });
     displayResult();
 };

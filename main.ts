@@ -113,7 +113,7 @@ const handleClick = (index: number) => {
             score--
         }
         if(scoreElement) {
-            scoreElement.textContent = score
+            scoreElement.innerHTML = score.toString()
         }
     }
     displayResult()
