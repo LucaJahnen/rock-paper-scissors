@@ -1,13 +1,13 @@
-const modal = document.querySelector(".modal") as HTMLDialogElement || null
+const modal = <HTMLDivElement>document.querySelector(".modal")
 const rulesButton = <HTMLButtonElement>document.querySelector(".rules")
 const closeButton = <HTMLButtonElement>document.querySelector(".close")
 
 rulesButton?.addEventListener("click", () => {
-    modal?.showModal()
+    modal.style.visibility = "visible"
 })
 
 closeButton?.addEventListener("click", () => {
-    modal?.close()
+    modal.style.visibility = "hidden"
 })
 
 const cards = document.querySelectorAll(".card")

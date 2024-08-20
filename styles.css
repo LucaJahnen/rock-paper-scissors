@@ -177,6 +177,12 @@ main {
     padding: 2.6rem;
     border-radius: 1rem;
     border: none;
+    visibility: hidden;
+    background-color: white;
+
+    img {
+        width: 100%;
+    }
 
     div {
         display: flex;
@@ -208,4 +214,81 @@ main {
     position: absolute;
     bottom: 4%;
     right: 2%;
+}
+
+@media screen and (max-width: 960px)  {
+    nav {
+        width: 85%;
+        margin: 2rem auto 0 auto;
+        padding: 0.7rem 1.4rem;
+        border: 3px solid hsl(217, 16%, 45%);
+        border-radius: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            width: 30%;
+        }
+    
+        section {
+            padding: 0.6rem 1.4rem;
+            border-radius: 0.4rem;
+            background-color: white;
+    
+            p {
+                text-transform: uppercase;
+                text-align: center;
+                color: hsl(229, 64%, 46%);
+                font-weight: 600;
+                letter-spacing: 0.1rem;
+                font-size: 0.7rem;
+            }
+    
+            h1 {
+                text-align: center;
+                color: hsl(229, 25%, 31%);
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .modal {
+        border-radius: 0;
+        border: none;
+        position: fixed;
+        transform: translate(0, 0);
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 1000;
+          
+    
+        div {
+            justify-content: center;
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 4rem;
+            }
+    
+            button {
+                position: absolute;
+                bottom: 5%;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 999;
+                padding: 0.8rem;
+            }
+        }
+    }
+
+    .rules {
+        position: absolute;
+        margin: 0 auto;
+        display: block;
+        right: 50%;
+        transform: translateX(50%);
+    }
 }
