@@ -13,8 +13,17 @@ closeButton?.addEventListener("click", () => {
 const cards = document.querySelectorAll(".card")
 const possibilites = ["paper", "scissors", "rock"]
 const main = document.querySelector("main")
-let score =  12
+
+if(localStorage.getItem("score") === null) {
+    localStorage.setItem("score", JSON.stringify(12))
+}
+
+
 const scoreElement = document.querySelector("nav section h1")
+if(scoreElement) {
+    const score = localStorage.getItem("score")
+    scoreElement.textContent = score ? JSON.parse(score) : "0"
+}
 
 const handleClick = (index: number) => {
     console.log("click")
@@ -108,12 +117,19 @@ const handleClick = (index: number) => {
         message.appendChild(buttonReset())
         main?.insertBefore(message, firstChild?.nextSibling ?? null)
         if(win) {
-            score++
+            const score = localStorage.getItem("score")
+            let newScore = score ? JSON.parse(score) : "0"
+            newScore++
+            localStorage.setItem("score", JSON.stringify(newScore))
         } else {
-            score--
+            const score = localStorage.getItem("score")
+            let newScore = score ? JSON.parse(score) : "0"
+            newScore--
+            localStorage.setItem("score", JSON.stringify(newScore))
         }
         if(scoreElement) {
-            scoreElement.innerHTML = score.toString()
+            const score = localStorage.getItem("score")
+            scoreElement.innerHTML = score ? JSON.parse(score).toString() : "0"
         }
     }
     displayResult()
