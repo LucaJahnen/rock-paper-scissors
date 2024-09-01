@@ -113,7 +113,6 @@ main {
     }
 
     .card {
-        padding: 2rem;
         height: 26vmin;
         width: 26vmin;
         border-radius: 50%;
@@ -281,6 +280,46 @@ main {
                 z-index: 999;
                 padding: 0.8rem;
             }
+        }
+    }
+
+    main {
+        width: 50%;
+        margin: 4rem auto 0 auto;
+
+        .bg-triangle {
+            width: 100%;
+        }
+
+        .card {
+            height: 34vmin;
+            width: 34vmin;
+            padding: 1.8rem;
+            background: white;
+            border: 0.8rem solid hsl(230, 89%, 62%);
+            left: -33.3%;
+            top: 8.5vmin;
+            
+            img {
+                width: 100%;
+            }
+        }
+    
+        .card::after {
+            height: 34vmin;
+            width: 34vmin;
+        }
+
+        .scissors {
+            border: 0.8rem solid hsl(39, 89%, 49%);
+            top: -26vmin;
+            left: 70%;
+        }
+    
+        .rock {
+            border: 0.8rem solid hsl(349, 71%, 52%);
+            top: -17vmin;
+            left: calc(50% - 17vmin);
         }
     }
 
